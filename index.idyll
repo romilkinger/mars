@@ -1,0 +1,161 @@
+[var name:"x" value:0 /]
+[var
+  name:"data"
+  value:`[{x: 1, y: 0.35}, {x: 1, y: 0.4}, {x:3, y:0.46}, {x:4, y:0.22}, {x:5, y:0.23}, {x:6, y:0.42}, {x:7,y:0.44}, {x:8,y:0.6}, {x:9, y:0.55}, {x:10, y:0.5},{x:11,y:0.35}, {x:12, y:0.3}]` /]
+[var name:"color" value:0 /]
+[var name:"rock" value:"Mars" /]
+[var name:"stepperIndex" value:0 /]
+[data name:"exampleData" source:"example-data.json" /]
+[data name:"penguins" source:"penguins.json" /]
+[data name:"methane" source:"methane.json" /]
+[data name:"methane" source:"methane.json" /]
+[data name:"csvjson" source:"csvjson.json" /]
+
+[meta
+  title:"Life on Mars"
+  description:"Short description of your project" /]
+[Header
+  title:"Life on Mars"
+  subtitle:"Search of water and organics on planet Mars."
+  author:"Romil Kinger"
+  date:"Mar 17, 2022"
+  fullWidth:true /]
+
+## Introduction
+
+Mars is the only planet in the solar system which is most accessible to humans and has the most chances to have traces of life compared to other planets. It is also one of the closest planets to Earth. Previously, it was believed that no life exists on the Planet Mars.
+
+[Image
+  src:"https://www.nasa.gov/sites/default/files/thumbnails/image/pia23378-16.jpg"
+  style:`{
+  width: "100%",
+  height: "auto",
+  display: "block",
+  margin: "1em auto",
+  minHeight: 320
+}` /]
+## Mission
+
+The Goals of this mission was to  study the rocks at the mars surface and to find their chemical composition in order to look for organic materials on mars which can provide evidence for life as organic compounds form the building blocks of life and give birth to microbes.
+
+By exploring Mars, humanity can find about the existence, possibility and origin of life itself.
+
+## Findings
+
+In the search for existence of life on mars and the essential elements required to support life, Curiosity Rover found a lot of interesting findings. One of those were that it provided evidence for presence of water in the ancient mars.
+
+[Image
+  src:"https://geology.com/stories/13/rocks-on-mars/conglomerate-outcrop.jpg"
+  style:`{
+  width: "100%",
+  height: "auto",
+  display: "block",
+  margin: "1em auto",
+  minHeight: 320
+}` /]
+
+The rock on the left is from  Mars whereas the one on the right is a picture of rock on earth. The deposition of rocks on it is formed by water which suggests that there was water previously on mars. It found the water with the pH level which can support life.
+
+One other key finding of the curiosity mission is that it found the presence of organic compounds on the surface of Mars. It found methane among several other organic compounds on mars.
+
+[Image
+  src:"https://mars.nasa.gov/system/resources/detail_files/21899_curiosity_methane-800.jpg"
+  style:`{
+  width: "100%",
+  height: "auto",
+  display: "block",
+  margin: "1em auto",
+  minHeight: 320
+}` /]
+[Graphic]
+## Below is a chart of methane levels in martian atmosphere vs time in months of a year.
+  [Scroller currentStep:x]
+    [Graphic]
+      [VegaLite
+        data:`[{month: 1, methane: 0.35}, {month: 2, methane: 0.4}, {month:3, methane:0.46}, {month:4, methane:0.22}, {month:5, methane:0.23}, {month:6, methane:0.42}, {month:7, methane:0.44}, {month:8, methane:0.6}, {month:9, methane:0.55}, {month:10, methane:0.5},{month:11, methane:0.35}, {month:12, methane:0.3}].slice(0,x+6)`
+        spec:`{
+      mark: "line",
+      encoding: {
+        x: {
+          field: "month",
+          type: "quantitative"
+        },
+        y: {
+          field: "methane",
+          type: "quantitative"
+        }
+      }
+    }`
+        width:"container"
+        height:400 /]
+    [/Graphic]
+    [Step]
+      [p]
+        The methane levels in martian atmosphere increases in the first quarter of every year.
+      [/p]
+    [/Step]
+    [Step]
+      [p]
+        and decreases in the second quarter.
+      [/p]
+    [/Step]
+    [Step]
+      [p]
+        And this pattern keeps repeating throughout the year, every year.
+      [/p]
+    [/Step]
+  [/Scroller]
+[/Graphic]
+
+On earth, 95% of methane is formed by biological beings, which suggest the presence of  microbes on mars under the surface. Other reasons can be due to reaction of water with minerals under the surface of mars or due to activity of comets. But the level of methane showed a seasonal trend which further supports the presence of microbes which become active in one season and hibernate in other.
+
+[VegaLite
+  data:`[{month: 1, methane: 0.35}, {month: 2, methane: 0.4}, {month:3, methane:0.46}, {month:4, methane:0.22}, {month:5, methane:0.23}, {month:6, methane:0.42}, {month:7, methane:0.44}, {month:8, methane:0.6}, {month:9, methane:0.55}, {month:10, methane:0.5},{month:11, methane:0.35}, {month:12, methane:0.3}]`
+  spec:`{
+  mark: "line",
+  encoding: {
+    x: {
+      field: "month",
+      type: "quantitative"
+    },
+    y: {
+      field: "methane",
+      type: "quantitative"
+    },
+    
+  }
+}`
+  width:"container"
+  height:300 /]
+
+Mars shows promising results from previous missions about presence of life and require serious attention to continue the exploration and study the origin of organic compounds.
+If the sources are found out to be biological, it will start a new era of space exploration and possibility of other forms of life on mars in future.
+
+## References
+[span]
+  1Mars Curiosity Rover. (2020, March 20).
+  [a href:"https://mars.nasa.gov/msl/home/2NASA."]https://mars.nasa.gov/msl/home/2NASA.[/a]
+  (2019, August 20).
+  [a
+    href:"https://mars.nasa.gov/msl/spacecraft/rover/power/3NASA."]https://mars.nasa.gov/msl/spacecraft/rover/power/3NASA.[/a]
+  (2019, September 09).
+  [a
+    href:"https://mars.nasa.gov/msl/spacecraft/instruments/summary/4”Mars"]https://mars.nasa.gov/msl/spacecraft/instruments/summary/4”Mars[/a]
+  Science Laboratory Fact Sheet.” National Aeronautics and Space Administration.
+  [a href:"https://mars.nasa.gov/internal_resources/605/5Gale"]https://mars.nasa.gov/internal_resources/605/5Gale[/a]
+  Crater. (2019, August 08).
+  [a
+    href:"https://mars.nasa.gov/msl/timeline/prelaunch/gale-crater/6Rock"]https://mars.nasa.gov/msl/timeline/prelaunch/gale-crater/6Rock[/a]
+  Outcrops on Mars and Earth – NASA’s Mars Exploration Program. (n.d.).
+  [a
+    href:"https://mars.nasa.gov/resources/4721/rock-outcrops-on-mars-and-earth/7NASA"]https://mars.nasa.gov/resources/4721/rock-outcrops-on-mars-and-earth/7NASA[/a]
+  Finds Ancient Organic Material, Mysterious Methane on Mars – NASA’s Mars Exploration Program. (2018, June 07).
+  [a
+    href:"https://mars.nasa.gov/news/8347/nasa-finds-ancient-organic-material-mysterious-methane-on-mars/8Atreya,"]https://mars.nasa.gov/news/8347/nasa-finds-ancient-organic-material-mysterious-methane-on-mars/8Atreya,[/a]
+  S. (2009, January 15). The Mystery of Methane on Mars and Titan.
+  [a
+    href:"https://www.scientificamerican.com/article/methane-on-mars-titan/9Lovett,"]https://www.scientificamerican.com/article/methane-on-mars-titan/9Lovett,[/a]
+  R. (2020, April 30). Is there life on Mars? Let’s assess the evidence.
+  [a
+    href:"https://cosmosmagazine.com/space/is-there-life-on-mars-let-s-assess-the-evidence"]https://cosmosmagazine.com/space/is-there-life-on-mars-let-s-assess-the-evidence[/a]
+[/span]
